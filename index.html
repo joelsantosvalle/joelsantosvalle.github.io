@@ -12,156 +12,202 @@
       padding: 0;
       box-sizing: border-box;
     }
+
     body {
       font-family: 'Arial', sans-serif;
-      line-height: 1.6;
-      background-color: #f9f9f9;
-      color: #333;
+      background-color: #121212; /* Dark background */
+      color: #f4f4f4; /* Light text */
+      display: flex;
+      min-height: 100vh;
     }
-    header {
-      background: #007acc;
-      color: white;
-      padding: 1rem 0;
+
+    /* Sidebar */
+    .sidebar {
+      background-color: #1f1f1f; /* Darker gray */
+      width: 20%;
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+    }
+
+    .sidebar h1 {
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .sidebar nav ul {
+      list-style: none;
+      width: 100%;
       text-align: center;
     }
-    nav {
-      background: #005f99;
-      padding: 0.5rem 0;
-      position: sticky;
-      top: 0;
-      z-index: 10;
+
+    .sidebar nav ul li {
+      margin: 1rem 0;
     }
-    nav ul {
-      list-style: none;
-      display: flex;
-      justify-content: center;
-    }
-    nav ul li {
-      margin: 0 15px;
-    }
-    nav ul li a {
+
+    .sidebar nav ul li a {
       text-decoration: none;
-      color: white;
+      color: #f4f4f4;
       font-weight: bold;
       transition: color 0.3s;
     }
-    nav ul li a:hover {
-      color: #ffcb05;
-    }
-    .hero {
-      background: url('https://via.placeholder.com/1920x500') no-repeat center center/cover;
-      height: 50vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: white;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-    }
-    .hero h1 {
-      font-size: 3rem;
-    }
-    .section {
-      padding: 2rem;
-      text-align: center;
-    }
-    .section h2 {
-      margin-bottom: 1rem;
+
+    .sidebar nav ul li a:hover {
       color: #007acc;
     }
-    .cards {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
+
+    .sidebar footer {
+      font-size: 0.8rem;
+      text-align: center;
+      color: #bbb;
     }
-    .card {
-      background: white;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      border-radius: 10px;
-      overflow: hidden;
-      max-width: 300px;
-      text-align: left;
+
+    /* Main Content */
+    .main {
+      flex: 1;
+      padding: 2rem;
+      overflow-y: auto;
     }
-    .card img {
-      width: 100%;
+
+    .section {
+      margin-bottom: 2rem;
     }
-    .card-body {
-      padding: 1rem;
+
+    .section h2 {
+      font-size: 1.8rem;
+      color: #007acc; /* Accent color */
+      margin-bottom: 1rem;
     }
-    .card-body h3 {
+
+    .section p,
+    .section ul {
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+
+    .section ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .section ul li {
       margin-bottom: 0.5rem;
     }
-    footer {
-      background: #005f99;
-      color: white;
-      padding: 1rem 0;
+
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+    }
+
+    .card {
+      background-color: #1f1f1f;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+      max-width: 300px;
+      padding: 1rem;
       text-align: center;
     }
-    footer a {
-      color: #ffcb05;
-      text-decoration: none;
+
+    .card img {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    .card h3 {
+      margin: 1rem 0;
     }
   </style>
 </head>
 <body>
 
-<header>
-  <h1>Welcome to My Portfolio</h1>
-</header>
+<div class="sidebar">
+  <h1>Your Name</h1>
+  <nav>
+    <ul>
+      <li><a href="#about">About Me</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Work Experience</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#interests">Main Interests</a></li>
+      <li><a href="#publications">Publications</a></li>
+    </ul>
+  </nav>
+  <footer>
+    <p>&copy; 2024 Your Name</p>
+  </footer>
+</div>
 
-<nav>
-  <ul>
-    <li><a href="#about">About</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
+<div class="main">
+  <section id="about" class="section">
+    <h2>About Me</h2>
+    <p>Hello! I'm [Your Name], a [Your Profession]. I specialize in [Your Specialization]. I enjoy solving problems, learning new technologies, and building innovative projects.</p>
+  </section>
 
-<section class="hero">
-  <h1>Hello, I'm [Your Name]</h1>
-</section>
+  <section id="experience" class="section">
+    <h2>Work Experience</h2>
+    <ul>
+      <li><strong>Job Title 1</strong> at <em>Company Name</em> (YYYY - YYYY): Brief description of role.</li>
+      <li><strong>Job Title 2</strong> at <em>Company Name</em> (YYYY - YYYY): Brief description of role.</li>
+    </ul>
+  </section>
 
-<section id="about" class="section">
-  <h2>About Me</h2>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget justo vitae purus malesuada dictum.</p>
-</section>
+  <section id="education" class="section">
+    <h2>Education</h2>
+    <ul>
+      <li><strong>Degree</strong>, Institution Name, YYYY - YYYY</li>
+      <li><strong>Degree</strong>, Institution Name, YYYY - YYYY</li>
+    </ul>
+  </section>
 
-<section id="projects" class="section">
-  <h2>My Projects</h2>
-  <div class="cards">
-    <div class="card">
-      <img src="https://via.placeholder.com/300x200" alt="Project 1">
-      <div class="card-body">
+  <section id="interests" class="section">
+    <h2>Main Interests</h2>
+    <ul>
+      <li>Interest 1</li>
+      <li>Interest 2</li>
+      <li>Interest 3</li>
+    </ul>
+  </section>
+
+  <section id="publications" class="section">
+    <h2>Publications</h2>
+    <ul>
+      <li>"Publication Title 1", Published in <em>Journal/Conference</em>, YYYY</li>
+      <li>"Publication Title 2", Published in <em>Journal/Conference</em>, YYYY</li>
+    </ul>
+  </section>
+
+  <section id="skills" class="section">
+    <h2>Skills</h2>
+    <ul>
+      <li>Skill 1</li>
+      <li>Skill 2</li>
+      <li>Skill 3</li>
+    </ul>
+  </section>
+
+  <section id="projects" class="section">
+    <h2>Projects</h2>
+    <div class="cards">
+      <div class="card">
+        <img src="https://via.placeholder.com/300x200" alt="Project 1">
         <h3>Project 1</h3>
-        <p>A brief description of the project goes here. Click below for details.</p>
+        <p>Short description of the project. Links and details go here.</p>
       </div>
-    </div>
-    <div class="card">
-      <img src="https://via.placeholder.com/300x200" alt="Project 2">
-      <div class="card-body">
+      <div class="card">
+        <img src="https://via.placeholder.com/300x200" alt="Project 2">
         <h3>Project 2</h3>
-        <p>A brief description of the project goes here. Click below for details.</p>
+        <p>Short description of the project. Links and details go here.</p>
       </div>
     </div>
-    <div class="card">
-      <img src="https://via.placeholder.com/300x200" alt="Project 3">
-      <div class="card-body">
-        <h3>Project 3</h3>
-        <p>A brief description of the project goes here. Click below for details.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="contact" class="section">
-  <h2>Contact Me</h2>
-  <p>Email: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
-  <p>GitHub: <a href="https://github.com/your-username" target="_blank">https://github.com/your-username</a></p>
-</section>
-
-<footer>
-  <p>&copy; 2024 [Your Name]. All rights reserved. | <a href="#about">Back to Top</a></p>
-</footer>
+  </section>
+</div>
 
 </body>
 </html>
